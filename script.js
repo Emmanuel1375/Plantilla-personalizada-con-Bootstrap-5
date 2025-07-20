@@ -1,3 +1,43 @@
+// Lógica para selector de tema (claro, oscuro, sistema)
+document.addEventListener('DOMContentLoaded', function () {
+  const themeButtons = document.querySelectorAll('[data-theme-value]');
+  const iconTheme = document.querySelector('#dropdownTema i');
+  const themeIcons = {
+    light: 'bi-sun',
+    dark: 'bi-moon',
+    auto: 'bi-circle-half',
+  };
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme);
+    localStorage.setItem('theme', theme);
+    // Cambia el icono del botón
+    if (iconTheme) {
+      iconTheme.className = 'bi ' + (themeIcons[theme] || 'bi-circle-half');
+    }
+  }
+
+  // Leer preferencia guardada
+  let savedTheme = localStorage.getItem('theme') || 'auto';
+  setTheme(savedTheme);
+
+  // Evento para cada botón
+  themeButtons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      setTheme(this.getAttribute('data-theme-value'));
+    });
+  });
+
+  // Si el usuario elige "auto", escuchar cambios del sistema
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if ((localStorage.getItem('theme') || 'auto') === 'auto') {
+        setTheme('auto');
+      }
+    });
+  }
+});
+
 const toggleButton = document.getElementById("toggleSidebar");
 const sidebar = document.getElementById("sidebar-desktop");
 const content = document.getElementById("main-content");

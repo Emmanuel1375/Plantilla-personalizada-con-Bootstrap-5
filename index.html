@@ -17,7 +17,7 @@
   <body>
     <!-- HEADER FIJO -->
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+      class="navbar navbar-expand-lg shadow-sm fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-dark d-lg-none me-2" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
@@ -85,12 +85,24 @@
                   sesión</a></li>
             </ul>
           </div>
+          <!-- Selector de tema -->
+          <div class="dropdown ms-2">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownTema" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-moon-stars"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownTema">
+              <li><h6 class="dropdown-header">Tema</h6></li>
+              <li><button class="dropdown-item" type="button" data-theme-value="light"><i class="bi bi-sun me-2"></i>Claro</button></li>
+              <li><button class="dropdown-item" type="button" data-theme-value="dark"><i class="bi bi-moon me-2"></i>Oscuro</button></li>
+              <li><button class="dropdown-item" type="button" data-theme-value="auto"><i class="bi bi-circle-half me-2"></i>Predeterminado</button></li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
 
     <!-- SIDEBAR FIJO (escritorio) -->
-    <div id="sidebar-desktop" class="d-none d-lg-block">
+    <div id="sidebar-desktop" class="d-none d-lg-block sidebar-bg">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12 ">
@@ -137,11 +149,11 @@
     </div>
 
     <!-- SIDEBAR MOVIL (offcanvas) -->
-    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1"
+    <div class="offcanvas offcanvas-start" tabindex="-1"
       id="sidebarMobile">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title">Menú</h5>
-        <button type="button" class="btn-close btn-close-white"
+        <button type="button" class="btn-close btn-close"
           data-bs-dismiss="offcanvas"></button>
       </div>
       <div class="offcanvas-body">
@@ -152,10 +164,10 @@
               placeholder="Buscar..." aria-label="Buscar" />
           </form>
           <div class="d-flex gap-2">
-            <button class="btn btn-outline-light btn-sm">
+            <button class="btn btn-outline btn-sm">
               <i class="bi bi-bell"></i>
             </button>
-            <button class="btn btn-outline-light btn-sm">
+            <button class="btn btn-outline btn-sm">
               <i class="bi bi-person-circle"></i>
             </button>
           </div>
@@ -164,13 +176,13 @@
 
         <!-- Opciones del menú -->
         <ul class="nav nav-pills flex-column">
-          <li class="nav-item"><a class="nav-link text-white" href="#"><i
+          <li class="nav-item"><a class="nav-link" href="#"><i
                 class="bi bi-house"></i> Inicio</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#"><i
+          <li class="nav-item"><a class="nav-link" href="#"><i
                 class="bi bi-person"></i> Perfil</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#"><i
+          <li class="nav-item"><a class="nav-link" href="#"><i
                 class="bi bi-gear"></i> Configuración</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#"><i
+          <li class="nav-item"><a class="nav-link" href="#"><i
                 class="bi bi-box-arrow-right"></i> Salir</a></li>
         </ul>
       </div>
@@ -275,9 +287,25 @@
       </div>
     </div>
     <!-- PIE DE PÁGINA -->
-    <footer class="bg-light text-center text-muted py-3 mt-4">
+    <footer class="footer-bg text-muted py-3">
       <div class="container">
-        <small>&copy; 2025 MiApp. Todos los derechos reservados.</small>
+        <div class="row align-items-center pb-2">
+          <div class="col-md-6 d-flex align-items-center">
+            <!-- Logotipo -->
+            <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Logo" style="height: 32px; margin-right: 10px;">
+            <span class="fw-bold">MiApp</span>
+          </div>
+          <div class="col-md-6 d-flex justify-content-end">
+            <a href="#" class="text-muted me-3 text-decoration-none">Acerca de</a>
+            <a href="#" class="text-muted text-decoration-none">Contáctenos</a>
+          </div>
+        </div>
+        <hr class="my-2">
+        <div class="row">
+          <div class="col-12 text-center">
+            <small>&copy; 2025 MiApp. Todos los derechos reservados. | Creado por Emmanuel1375</small>
+          </div>
+        </div>
       </div>
     </footer>
 

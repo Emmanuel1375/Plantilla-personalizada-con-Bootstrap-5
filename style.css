@@ -1,3 +1,76 @@
+/* Sidebar y footer adaptables a tema */
+
+.sidebar-bg {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-bs-theme="dark"] .sidebar-bg {
+  background-color: #23272b !important;
+  color: #fff !important;
+}
+
+[data-bs-theme="light"] .sidebar-bg {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+}
+
+[data-bs-theme="light"] .sidebar-bg .nav-link {
+  color: #212529 !important;
+}
+
+[data-bs-theme="light"] .sidebar-bg .nav-link.active {
+  background-color: #e9ecef !important;
+  color: #0d6efd !important;
+}
+
+[data-bs-theme="dark"] .sidebar-bg {
+  background-color: #23272b !important;
+  color: #fff !important;
+}
+
+
+.footer-bg {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-bs-theme="dark"] .footer-bg {
+  background-color: #23272b !important;
+  color: #adb5bd !important;
+}
+
+[data-bs-theme="light"] .footer-bg {
+  background-color: #f8f9fa !important;
+  color: #6c757d !important;
+}
+@media (min-width: 992px) {
+  #sidebar-desktop {
+    width: 220px;
+  }
+  #main-content,
+  footer {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    max-width: calc(100% - 220px);
+    transition: margin-left 0.3s, width 0.3s;
+  }
+  #sidebar-desktop.collapsed ~ #main-content,
+  #sidebar-desktop.collapsed ~ footer {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+    max-width: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 991.98px) {
+  #main-content,
+  footer {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -9,6 +82,7 @@ body {
 
 #sidebar-desktop {
   overflow-x: hidden;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Limitar el ancho solo a los enlaces del menú, no al botón */
@@ -17,10 +91,11 @@ body {
   box-sizing: border-box;
 }
 
+/* Sidebar colapsado: ancho 60px para que coincida con el ajuste del footer y main-content */
 #sidebar-desktop.collapsed {
-  width: 70px !important;
-  min-width: 70px;
-  max-width: 70px;
+  width: 60px !important;
+  min-width: 60px !important;
+  max-width: 60px !important;
   padding-left: 0.25rem !important;
   padding-right: 0.25rem !important;
 }
@@ -48,7 +123,6 @@ body {
     left: 0;
     width: 220px;
     height: calc(100vh - 56px);
-    background-color: #343a40;
     color: white;
     padding: 1rem;
     overflow-y: auto;
