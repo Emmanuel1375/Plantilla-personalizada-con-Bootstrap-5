@@ -1,0 +1,75 @@
+body {
+  overflow-x: hidden;
+}
+
+#main-content {
+  padding-top: 56px; /* Altura del header */
+  transition: margin-left 0.3s;
+}
+
+#sidebar-desktop {
+  overflow-x: hidden;
+}
+
+/* Limitar el ancho solo a los enlaces del menú, no al botón */
+#sidebar-desktop .nav-link {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#sidebar-desktop.collapsed {
+  width: 70px !important;
+  min-width: 70px;
+  max-width: 70px;
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+
+#sidebar-desktop .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 0.5rem;
+  white-space: nowrap;
+}
+
+#toggleSidebar {
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  padding: 0;
+}
+
+/* Sidebar fijo escritorio */
+@media (min-width: 992px) {
+  #sidebar-desktop {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 56px);
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+    overflow-y: auto;
+    transition: width 0.3s;
+  }
+
+  #sidebar-desktop.collapsed {
+    width: 60px;
+  }
+
+  #sidebar-desktop.collapsed .text-label {
+    display: none;
+  }
+
+  #main-content {
+    margin-left: 220px;
+    transition: margin-left 0.3s;
+    padding-top: 56px;
+  }
+
+  #sidebar-desktop.collapsed ~ #main-content {
+    margin-left: 60px;
+  }
+}

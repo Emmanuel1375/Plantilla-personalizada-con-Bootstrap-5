@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layout Responsive con Bootstrap 5</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet" />
+    <!-- Agrega dentro del <head> -->
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <!-- HEADER FIJO -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-dark d-lg-none me-2" type="button"
+          data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
+          <i class="bi bi-list"></i>
+        </button>
+        <a class="navbar-brand fw-bold" href="#">MiApp</a>
+
+        <!-- Opciones solo visibles en escritorio -->
+        <div class="d-none d-lg-flex align-items-center ms-auto">
+          <form class="d-none d-md-flex me-3" role="search">
+            <input class="form-control form-control-sm" type="search"
+              placeholder="Buscar..." aria-label="Buscar" />
+          </form>
+          <!-- Mensajes -->
+          <div class="dropdown me-2">
+            <button class="btn btn-outline-secondary dropdown-toggle"
+              type="button" id="dropdownMensajes" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-envelope"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownMensajes">
+              <li><h6 class="dropdown-header">Mensajes</h6></li>
+              <li><a class="dropdown-item" href="#">Mensaje 1: ¡Hola!</a></li>
+              <li><a class="dropdown-item" href="#">Mensaje 2: ¿Cómo
+                  estás?</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-center" href="#">Ver todos los
+                  mensajes</a></li>
+            </ul>
+          </div>
+          <!-- Notificaciones -->
+          <div class="dropdown me-2">
+            <button class="btn btn-outline-secondary dropdown-toggle"
+              type="button" id="dropdownNotificaciones"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-bell"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownNotificaciones">
+              <li><h6 class="dropdown-header">Notificaciones</h6></li>
+              <li><a class="dropdown-item" href="#">Tienes una nueva
+                  alerta</a></li>
+              <li><a class="dropdown-item" href="#">Actualización
+                  disponible</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-center" href="#">Ver todas las
+                  notificaciones</a></li>
+            </ul>
+          </div>
+          <!-- Perfil -->
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle"
+              type="button" id="dropdownPerfil" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-person-circle"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownPerfil">
+              <li><h6 class="dropdown-header">Mi Perfil</h6></li>
+              <li><a class="dropdown-item" href="#">Ver perfil</a></li>
+              <li><a class="dropdown-item" href="#">Configuración</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#">Cerrar
+                  sesión</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SIDEBAR FIJO (escritorio) -->
+    <div id="sidebar-desktop" class="d-none d-lg-block">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 ">
+            <!-- Botón colapsar -->
+            <div class="d-flex justify-content-end mb-3">
+              <button id="toggleSidebar" class="btn btn-outline-light mb-3">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <!-- Menú -->
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip"
+                  title="Inicio"><i
+                    class="bi bi-house"></i>
+                  <span class="text-label ms-2">Inicio</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip"
+                  title="Perfil"><i
+                    class="bi bi-person"></i>
+                  <span class="text-label ms-2">Perfil</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip"
+                  title="Configuración"><i
+                    class="bi bi-gear"></i>
+                  <span class="text-label ms-2">Configuración</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip"
+                  title="Salir"><i
+                    class="bi bi-box-arrow-right"></i> <span
+                    class="text-label ms-2">Salir</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR MOVIL (offcanvas) -->
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1"
+      id="sidebarMobile">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menú</h5>
+        <button type="button" class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Opciones del header dentro del sidebar (solo móviles) -->
+        <div class="mb-3 d-block d-lg-none">
+          <form class="mb-2">
+            <input class="form-control form-control-sm" type="search"
+              placeholder="Buscar..." aria-label="Buscar" />
+          </form>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-light btn-sm">
+              <i class="bi bi-bell"></i>
+            </button>
+            <button class="btn btn-outline-light btn-sm">
+              <i class="bi bi-person-circle"></i>
+            </button>
+          </div>
+          <hr class="bg-secondary mt-3 mb-2" />
+        </div>
+
+        <!-- Opciones del menú -->
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item"><a class="nav-link text-white" href="#"><i
+                class="bi bi-house"></i> Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#"><i
+                class="bi bi-person"></i> Perfil</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#"><i
+                class="bi bi-gear"></i> Configuración</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#"><i
+                class="bi bi-box-arrow-right"></i> Salir</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="main-content">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Welcome</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum
+              aspernatur, nostrum quasi vero hic, fuga esse quidem deleniti incidunt
+              minus quae harum perspiciatis iusto! Odio commodi error molestias
+              tempora nostrum sunt assumenda alias minus, ullam voluptatum magni
+              quae aliquid deleniti illum laboriosam reiciendis dolorum libero harum
+              dolor repudiandae distinctio. Cupiditate ab minus ullam unde.
+              Voluptate, magni vel eveniet aut placeat nobis aliquam ullam corrupti,
+              at esse fugiat. Facere rerum iure omnis totam nostrum ipsum laudantium
+              consequuntur? Veritatis quam quos et cupiditate. Cumque perferendis
+              dignissimos, odio, quibusdam cupiditate suscipit delectus voluptate
+              quod inventore, omnis rerum modi! Culpa impedit, ea velit animi vero
+              consectetur reprehenderit aliquam. In eum autem quidem dignissimos
+              similique cupiditate voluptatum placeat temporibus, neque pariatur
+              reprehenderit ipsa repellendus nemo ut est officia harum porro,
+              incidunt asperiores at, magni nihil necessitatibus quis voluptate!
+              Dicta minus beatae eaque quae possimus cumque laborum, provident
+              voluptatum vitae fuga praesentium natus laudantium! Iste itaque
+              soluta, ipsum, aut nihil voluptate repellendus a nulla error, saepe
+              cupiditate repellat quaerat architecto nisi porro laudantium nobis cum
+              nam illo hic dicta doloremque quae. Temporibus exercitationem quia
+              modi dicta ratione doloremque voluptatibus doloribus porro, suscipit
+              illum accusamus, ea animi voluptate eaque eos consectetur reiciendis
+              velit nesciunt vitae harum culpa quod et autem quae. Tempore, sunt
+              dolore. Nesciunt saepe cum, ad velit sed, totam ab recusandae odit
+              sunt accusamus quae minus perferendis beatae qui vitae, quidem
+              dignissimos officiis facere natus aut praesentium quisquam blanditiis
+              assumenda repudiandae! Placeat voluptatibus voluptas suscipit amet
+              exercitationem quasi nesciunt debitis cupiditate ex rerum illum
+              magnam, quos alias officia fugiat sunt saepe? Harum hic quo nulla,
+              porro, deserunt nam explicabo maxime odio repudiandae non culpa, ab
+              numquam aliquid libero placeat quisquam nemo dolorem impedit
+              repellendus molestias cum accusamus. Ab quae esse nisi dolor. Quam,
+              odio amet laboriosam, cum vero provident nulla incidunt, odit beatae
+              nostrum rerum voluptatem! Incidunt obcaecati suscipit facere facilis,
+              illo nostrum natus officiis reprehenderit perferendis, laborum iure ut
+              saepe odio maxime dicta voluptatibus fugiat alias odit! Labore
+              delectus saepe, voluptatibus nostrum architecto minima ullam ad
+              reprehenderit eius itaque consequuntur laboriosam soluta dolor omnis
+              corporis explicabo nemo voluptatem veniam voluptas? Expedita tenetur
+              ducimus deserunt ab dolore ipsam nulla architecto accusantium vel,
+              aliquam rem veritatis tempore! Voluptas quae, quas magni accusantium,
+              deleniti, dicta enim numquam repudiandae libero a nam facilis
+              perspiciatis molestias adipisci? Atque quaerat nemo repudiandae,
+              molestiae nihil eos architecto deleniti assumenda fugiat nobis quam
+              suscipit minus facilis minima, corrupti, reiciendis totam? Ab
+              explicabo eum, autem ex ea veritatis animi enim impedit quia
+              excepturi. Nobis nesciunt assumenda ratione odit minus iusto eos, unde
+              magni similique harum maxime suscipit voluptates laudantium repellat
+              quisquam mollitia, tempora at amet quis consequuntur illum? Eligendi
+              veritatis deserunt nihil eius aperiam harum laudantium fuga tenetur in
+              modi maiores culpa itaque esse aut atque vitae est beatae deleniti a
+              voluptatum, quae quas incidunt. Qui, voluptates ullam unde laboriosam
+              aperiam dolorem quo nam rerum alias quaerat corporis animi
+              praesentium, repellat perferendis sed quod inventore possimus sequi
+              suscipit magni vitae delectus ipsum nisi saepe? Qui quas recusandae
+              similique autem. Iure non odit commodi provident culpa rerum veniam?
+              Quae inventore doloribus accusamus excepturi saepe quisquam nam
+              reiciendis rerum sit, dicta odio ex ullam fuga rem explicabo, culpa
+              odit. Aliquam odit possimus soluta dicta numquam cum pariatur at,
+              consequatur repellendus ducimus, sed totam quae sapiente blanditiis
+              atque, laborum mollitia recusandae eligendi optio. Praesentium quasi
+              assumenda sapiente voluptatem, vero, alias officiis facilis aliquam
+              quibusdam, non corrupti sint distinctio? Aperiam expedita facere fuga
+              cum consequatur aut, fugiat voluptate accusantium amet tempora vero,
+              porro molestiae, placeat cupiditate deleniti error eaque a minima unde
+              repellat reprehenderit iste mollitia distinctio obcaecati? Illo, rerum
+              totam. Placeat dolores magni maxime totam ut? Ratione sapiente placeat
+              ab necessitatibus quos, dolorum quas recusandae expedita nam soluta
+              hic amet ut dolores molestiae vel dolore. Eum eaque quae cupiditate
+              quis quia aperiam velit magnam. Quia fugiat id iusto explicabo modi
+              similique debitis ipsa quod assumenda ducimus dolores cupiditate nemo
+              dolore accusamus perspiciatis provident, saepe itaque beatae molestias
+              atque corrupti. Accusantium, nostrum. Dignissimos nulla cum totam
+              odio. Rem obcaecati quidem nostrum eaque minus aut accusamus sed
+              voluptatum velit odio mollitia deserunt quis delectus soluta enim
+              tempore, facilis nemo quia possimus tenetur assumenda nisi eligendi
+              laboriosam? Velit nulla eum ratione quidem fuga officiis tempora
+              cumque repudiandae iusto! Pariatur quas atque molestiae reprehenderit
+              ratione ea facilis distinctio officiis provident omnis saepe dolorem
+              accusamus, sit unde corporis eum quod. Debitis consequatur aliquid
+              saepe, labore quasi est non aspernatur excepturi dignissimos
+              asperiores quibusdam nisi quae maxime ex sequi esse quam, molestias,
+              quidem sed assumenda ipsa quod ab doloribus culpa! Accusantium,
+              quo?</p>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-light text-center text-muted py-3 mt-4">
+      <div class="container">
+        <small>&copy; 2025 MiApp. Todos los derechos reservados.</small>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
