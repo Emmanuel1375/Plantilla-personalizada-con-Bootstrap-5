@@ -17,7 +17,7 @@
   <body>
     <!-- HEADER FIJO -->
     <nav
-      class="navbar navbar-expand-lg shadow-sm fixed-top">
+      class="navbar navbar-expand-lg shadow fixed-top shadow-sm px-3 navbar-bg">
       <div class="container-fluid">
         <button class="btn btn-outline-dark d-lg-none me-2" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
@@ -87,14 +87,35 @@
           </div>
           <!-- Selector de tema -->
           <div class="dropdown ms-2">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownTema" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-outline-secondary dropdown-toggle"
+              type="button" id="dropdownTema" data-bs-toggle="dropdown"
+              aria-expanded="false">
               <i class="bi bi-moon-stars"></i>
             </button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownTema">
+            <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownTema">
               <li><h6 class="dropdown-header">Tema</h6></li>
-              <li><button class="dropdown-item" type="button" data-theme-value="light"><i class="bi bi-sun me-2"></i>Claro</button></li>
-              <li><button class="dropdown-item" type="button" data-theme-value="dark"><i class="bi bi-moon me-2"></i>Oscuro</button></li>
-              <li><button class="dropdown-item" type="button" data-theme-value="auto"><i class="bi bi-circle-half me-2"></i>Predeterminado</button></li>
+              <li>
+                <label class="dropdown-item" for="light">
+                  <input type="radio" name="appearance" id="light" value="light"
+                    checked>
+                  <i class="bi bi-sun me-2"></i>Claro
+                </label>
+              </li>
+              <li>
+                <label class="dropdown-item" for="dark">
+                  <input type="radio" name="appearance" id="dark" value="dark"
+                    checked>
+                  <i class="bi bi-moon me-2"></i>Oscuro
+                </label>
+              </li>
+              <li>
+                <label class="dropdown-item" for="device">
+                  <input type="radio" name="appearance" id="device"
+                    value="device" checked>
+                  <i class="bi bi-circle-half me-2"></i>Sistema
+                </label>
+              </li>
             </ul>
           </div>
         </div>
@@ -102,13 +123,13 @@
     </nav>
 
     <!-- SIDEBAR FIJO (escritorio) -->
-    <div id="sidebar-desktop" class="d-none d-lg-block sidebar-bg">
+    <div id="sidebar-desktop" class="d-none d-lg-block sidebar-bg shadow">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12 ">
             <!-- Botón colapsar -->
             <div class="d-flex justify-content-end mb-3">
-              <button id="toggleSidebar" class="btn btn-outline-light mb-3">
+              <button id="toggleSidebar" class="btn btn-outline-dark mb-3">
                 <i class="bi bi-chevron-left"></i>
               </button>
             </div>
@@ -119,25 +140,40 @@
             <!-- Menú -->
             <ul class="nav nav-pills flex-column">
               <li class="nav-item">
-                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip"
+                <a class="nav-link" href="#" data-bs-toggle="tooltip"
                   title="Inicio"><i
                     class="bi bi-house"></i>
                   <span class="text-label ms-2">Inicio</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip"
+                <a class="nav-link" href="#" data-bs-toggle="tooltip"
                   title="Perfil"><i
                     class="bi bi-person"></i>
                   <span class="text-label ms-2">Perfil</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip"
+                <a class="nav-link" href="#" data-bs-toggle="tooltip"
                   title="Configuración"><i
                     class="bi bi-gear"></i>
                   <span class="text-label ms-2">Configuración</span></a>
               </li>
+              <!-- Opción desplegable especial -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" 
+                  id="sidebarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >
+                  <i class="bi bi-folder" data-bs-toggle="tooltip" title="Más opciones"></i>
+                  <span class="text-label ms-2">Más opciones</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="sidebarDropdown">
+                  <li><a class="dropdown-item" href="#">Subopción 1</a></li>
+                  <li><a class="dropdown-item" href="#">Subopción 2</a></li>
+                  <li><a class="dropdown-item" href="#">Subopción 3</a></li>
+                </ul>
+              </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#" data-bs-toggle="tooltip"
+                <a class="nav-link" href="#" data-bs-toggle="tooltip"
                   title="Salir"><i
                     class="bi bi-box-arrow-right"></i> <span
                     class="text-label ms-2">Salir</span></a>
@@ -149,8 +185,7 @@
     </div>
 
     <!-- SIDEBAR MOVIL (offcanvas) -->
-    <div class="offcanvas offcanvas-start" tabindex="-1"
-      id="sidebarMobile">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMobile">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title">Menú</h5>
         <button type="button" class="btn-close btn-close"
@@ -189,7 +224,7 @@
     </div>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <div id="main-content">
+    <div id="main-content" class="pt-5">
       <div class="container mt-4">
         <div class="row">
           <div class="col-md-12">
@@ -199,111 +234,163 @@
         <div class="row">
           <div class="col-md-12">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum
-              aspernatur, nostrum quasi vero hic, fuga esse quidem deleniti incidunt
+              aspernatur, nostrum quasi vero hic, fuga esse quidem deleniti
+              incidunt
               minus quae harum perspiciatis iusto! Odio commodi error molestias
               tempora nostrum sunt assumenda alias minus, ullam voluptatum magni
-              quae aliquid deleniti illum laboriosam reiciendis dolorum libero harum
+              quae aliquid deleniti illum laboriosam reiciendis dolorum libero
+              harum
               dolor repudiandae distinctio. Cupiditate ab minus ullam unde.
-              Voluptate, magni vel eveniet aut placeat nobis aliquam ullam corrupti,
-              at esse fugiat. Facere rerum iure omnis totam nostrum ipsum laudantium
-              consequuntur? Veritatis quam quos et cupiditate. Cumque perferendis
-              dignissimos, odio, quibusdam cupiditate suscipit delectus voluptate
-              quod inventore, omnis rerum modi! Culpa impedit, ea velit animi vero
+              Voluptate, magni vel eveniet aut placeat nobis aliquam ullam
+              corrupti,
+              at esse fugiat. Facere rerum iure omnis totam nostrum ipsum
+              laudantium
+              consequuntur? Veritatis quam quos et cupiditate. Cumque
+              perferendis
+              dignissimos, odio, quibusdam cupiditate suscipit delectus
+              voluptate
+              quod inventore, omnis rerum modi! Culpa impedit, ea velit animi
+              vero
               consectetur reprehenderit aliquam. In eum autem quidem dignissimos
               similique cupiditate voluptatum placeat temporibus, neque pariatur
               reprehenderit ipsa repellendus nemo ut est officia harum porro,
               incidunt asperiores at, magni nihil necessitatibus quis voluptate!
               Dicta minus beatae eaque quae possimus cumque laborum, provident
               voluptatum vitae fuga praesentium natus laudantium! Iste itaque
-              soluta, ipsum, aut nihil voluptate repellendus a nulla error, saepe
-              cupiditate repellat quaerat architecto nisi porro laudantium nobis cum
+              soluta, ipsum, aut nihil voluptate repellendus a nulla error,
+              saepe
+              cupiditate repellat quaerat architecto nisi porro laudantium nobis
+              cum
               nam illo hic dicta doloremque quae. Temporibus exercitationem quia
-              modi dicta ratione doloremque voluptatibus doloribus porro, suscipit
-              illum accusamus, ea animi voluptate eaque eos consectetur reiciendis
+              modi dicta ratione doloremque voluptatibus doloribus porro,
+              suscipit
+              illum accusamus, ea animi voluptate eaque eos consectetur
+              reiciendis
               velit nesciunt vitae harum culpa quod et autem quae. Tempore, sunt
               dolore. Nesciunt saepe cum, ad velit sed, totam ab recusandae odit
               sunt accusamus quae minus perferendis beatae qui vitae, quidem
-              dignissimos officiis facere natus aut praesentium quisquam blanditiis
+              dignissimos officiis facere natus aut praesentium quisquam
+              blanditiis
               assumenda repudiandae! Placeat voluptatibus voluptas suscipit amet
               exercitationem quasi nesciunt debitis cupiditate ex rerum illum
               magnam, quos alias officia fugiat sunt saepe? Harum hic quo nulla,
-              porro, deserunt nam explicabo maxime odio repudiandae non culpa, ab
+              porro, deserunt nam explicabo maxime odio repudiandae non culpa,
+              ab
               numquam aliquid libero placeat quisquam nemo dolorem impedit
-              repellendus molestias cum accusamus. Ab quae esse nisi dolor. Quam,
-              odio amet laboriosam, cum vero provident nulla incidunt, odit beatae
-              nostrum rerum voluptatem! Incidunt obcaecati suscipit facere facilis,
-              illo nostrum natus officiis reprehenderit perferendis, laborum iure ut
+              repellendus molestias cum accusamus. Ab quae esse nisi dolor.
+              Quam,
+              odio amet laboriosam, cum vero provident nulla incidunt, odit
+              beatae
+              nostrum rerum voluptatem! Incidunt obcaecati suscipit facere
+              facilis,
+              illo nostrum natus officiis reprehenderit perferendis, laborum
+              iure ut
               saepe odio maxime dicta voluptatibus fugiat alias odit! Labore
               delectus saepe, voluptatibus nostrum architecto minima ullam ad
-              reprehenderit eius itaque consequuntur laboriosam soluta dolor omnis
-              corporis explicabo nemo voluptatem veniam voluptas? Expedita tenetur
+              reprehenderit eius itaque consequuntur laboriosam soluta dolor
+              omnis
+              corporis explicabo nemo voluptatem veniam voluptas? Expedita
+              tenetur
               ducimus deserunt ab dolore ipsam nulla architecto accusantium vel,
-              aliquam rem veritatis tempore! Voluptas quae, quas magni accusantium,
+              aliquam rem veritatis tempore! Voluptas quae, quas magni
+              accusantium,
               deleniti, dicta enim numquam repudiandae libero a nam facilis
               perspiciatis molestias adipisci? Atque quaerat nemo repudiandae,
-              molestiae nihil eos architecto deleniti assumenda fugiat nobis quam
+              molestiae nihil eos architecto deleniti assumenda fugiat nobis
+              quam
               suscipit minus facilis minima, corrupti, reiciendis totam? Ab
               explicabo eum, autem ex ea veritatis animi enim impedit quia
-              excepturi. Nobis nesciunt assumenda ratione odit minus iusto eos, unde
-              magni similique harum maxime suscipit voluptates laudantium repellat
-              quisquam mollitia, tempora at amet quis consequuntur illum? Eligendi
-              veritatis deserunt nihil eius aperiam harum laudantium fuga tenetur in
-              modi maiores culpa itaque esse aut atque vitae est beatae deleniti a
-              voluptatum, quae quas incidunt. Qui, voluptates ullam unde laboriosam
+              excepturi. Nobis nesciunt assumenda ratione odit minus iusto eos,
+              unde
+              magni similique harum maxime suscipit voluptates laudantium
+              repellat
+              quisquam mollitia, tempora at amet quis consequuntur illum?
+              Eligendi
+              veritatis deserunt nihil eius aperiam harum laudantium fuga
+              tenetur in
+              modi maiores culpa itaque esse aut atque vitae est beatae deleniti
+              a
+              voluptatum, quae quas incidunt. Qui, voluptates ullam unde
+              laboriosam
               aperiam dolorem quo nam rerum alias quaerat corporis animi
-              praesentium, repellat perferendis sed quod inventore possimus sequi
-              suscipit magni vitae delectus ipsum nisi saepe? Qui quas recusandae
-              similique autem. Iure non odit commodi provident culpa rerum veniam?
+              praesentium, repellat perferendis sed quod inventore possimus
+              sequi
+              suscipit magni vitae delectus ipsum nisi saepe? Qui quas
+              recusandae
+              similique autem. Iure non odit commodi provident culpa rerum
+              veniam?
               Quae inventore doloribus accusamus excepturi saepe quisquam nam
-              reiciendis rerum sit, dicta odio ex ullam fuga rem explicabo, culpa
+              reiciendis rerum sit, dicta odio ex ullam fuga rem explicabo,
+              culpa
               odit. Aliquam odit possimus soluta dicta numquam cum pariatur at,
-              consequatur repellendus ducimus, sed totam quae sapiente blanditiis
-              atque, laborum mollitia recusandae eligendi optio. Praesentium quasi
-              assumenda sapiente voluptatem, vero, alias officiis facilis aliquam
-              quibusdam, non corrupti sint distinctio? Aperiam expedita facere fuga
-              cum consequatur aut, fugiat voluptate accusantium amet tempora vero,
-              porro molestiae, placeat cupiditate deleniti error eaque a minima unde
-              repellat reprehenderit iste mollitia distinctio obcaecati? Illo, rerum
-              totam. Placeat dolores magni maxime totam ut? Ratione sapiente placeat
-              ab necessitatibus quos, dolorum quas recusandae expedita nam soluta
-              hic amet ut dolores molestiae vel dolore. Eum eaque quae cupiditate
-              quis quia aperiam velit magnam. Quia fugiat id iusto explicabo modi
-              similique debitis ipsa quod assumenda ducimus dolores cupiditate nemo
-              dolore accusamus perspiciatis provident, saepe itaque beatae molestias
+              consequatur repellendus ducimus, sed totam quae sapiente
+              blanditiis
+              atque, laborum mollitia recusandae eligendi optio. Praesentium
+              quasi
+              assumenda sapiente voluptatem, vero, alias officiis facilis
+              aliquam
+              quibusdam, non corrupti sint distinctio? Aperiam expedita facere
+              fuga
+              cum consequatur aut, fugiat voluptate accusantium amet tempora
+              vero,
+              porro molestiae, placeat cupiditate deleniti error eaque a minima
+              unde
+              repellat reprehenderit iste mollitia distinctio obcaecati? Illo,
+              rerum
+              totam. Placeat dolores magni maxime totam ut? Ratione sapiente
+              placeat
+              ab necessitatibus quos, dolorum quas recusandae expedita nam
+              soluta
+              hic amet ut dolores molestiae vel dolore. Eum eaque quae
+              cupiditate
+              quis quia aperiam velit magnam. Quia fugiat id iusto explicabo
+              modi
+              similique debitis ipsa quod assumenda ducimus dolores cupiditate
+              nemo
+              dolore accusamus perspiciatis provident, saepe itaque beatae
+              molestias
               atque corrupti. Accusantium, nostrum. Dignissimos nulla cum totam
               odio. Rem obcaecati quidem nostrum eaque minus aut accusamus sed
               voluptatum velit odio mollitia deserunt quis delectus soluta enim
-              tempore, facilis nemo quia possimus tenetur assumenda nisi eligendi
+              tempore, facilis nemo quia possimus tenetur assumenda nisi
+              eligendi
               laboriosam? Velit nulla eum ratione quidem fuga officiis tempora
-              cumque repudiandae iusto! Pariatur quas atque molestiae reprehenderit
-              ratione ea facilis distinctio officiis provident omnis saepe dolorem
+              cumque repudiandae iusto! Pariatur quas atque molestiae
+              reprehenderit
+              ratione ea facilis distinctio officiis provident omnis saepe
+              dolorem
               accusamus, sit unde corporis eum quod. Debitis consequatur aliquid
               saepe, labore quasi est non aspernatur excepturi dignissimos
-              asperiores quibusdam nisi quae maxime ex sequi esse quam, molestias,
+              asperiores quibusdam nisi quae maxime ex sequi esse quam,
+              molestias,
               quidem sed assumenda ipsa quod ab doloribus culpa! Accusantium,
-              quo?</p>            
+              quo?</p>
           </div>
         </div>
       </div>
     </div>
     <!-- PIE DE PÁGINA -->
-    <footer class="footer-bg text-muted py-3">
+    <footer class="footer-bg shadow text-muted py-3">
       <div class="container">
         <div class="row align-items-center pb-2">
           <div class="col-md-6 d-flex align-items-center">
             <!-- Logotipo -->
-            <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Logo" style="height: 32px; margin-right: 10px;">
+            <img
+              src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
+              alt="Logo" style="height: 32px; margin-right: 10px;">
             <span class="fw-bold">MiApp</span>
           </div>
           <div class="col-md-6 d-flex justify-content-end">
-            <a href="#" class="text-muted me-3 text-decoration-none">Acerca de</a>
+            <a href="#" class="text-muted me-3 text-decoration-none">Acerca
+              de</a>
             <a href="#" class="text-muted text-decoration-none">Contáctenos</a>
           </div>
         </div>
         <hr class="my-2">
         <div class="row">
           <div class="col-12 text-center">
-            <small>&copy; 2025 MiApp. Todos los derechos reservados. | Creado por Emmanuel1375</small>
+            <small>&copy; 2025 MiApp. Todos los derechos reservados. | Creado
+              por Emmanuel1375</small>
           </div>
         </div>
       </div>

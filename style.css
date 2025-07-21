@@ -1,88 +1,14 @@
-/* Sidebar y footer adaptables a tema */
-
-.sidebar-bg {
-  transition: background-color 0.3s, color 0.3s;
-}
-
-[data-bs-theme="dark"] .sidebar-bg {
-  background-color: #23272b !important;
-  color: #fff !important;
-}
-
-[data-bs-theme="light"] .sidebar-bg {
-  background-color: #f8f9fa !important;
-  color: #212529 !important;
-}
-
-[data-bs-theme="light"] .sidebar-bg .nav-link {
-  color: #212529 !important;
-}
-
-[data-bs-theme="light"] .sidebar-bg .nav-link.active {
-  background-color: #e9ecef !important;
-  color: #0d6efd !important;
-}
-
-[data-bs-theme="dark"] .sidebar-bg {
-  background-color: #23272b !important;
-  color: #fff !important;
-}
-
-
-.footer-bg {
-  background-color: #f8f9fa;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-[data-bs-theme="dark"] .footer-bg {
-  background-color: #23272b !important;
-  color: #adb5bd !important;
-}
-
-[data-bs-theme="light"] .footer-bg {
-  background-color: #f8f9fa !important;
-  color: #6c757d !important;
-}
-@media (min-width: 992px) {
-  #sidebar-desktop {
-    width: 220px;
-  }
-  #main-content,
-  footer {
-    margin-left: 220px;
-    width: calc(100% - 220px);
-    max-width: calc(100% - 220px);
-    transition: margin-left 0.3s, width 0.3s;
-  }
-  #sidebar-desktop.collapsed ~ #main-content,
-  #sidebar-desktop.collapsed ~ footer {
-    margin-left: 60px;
-    width: calc(100% - 60px);
-    max-width: calc(100% - 60px);
-  }
-}
-
-@media (max-width: 991.98px) {
-  #main-content,
-  footer {
-    margin-left: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
 body {
   overflow-x: hidden;
 }
 
-#main-content {
-  padding-top: 56px; /* Altura del header */
-  transition: margin-left 0.3s;
+#sidebar-desktop {
+  overflow-x: hidden !important; /* Permitir el desbordamiento horizontal */
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#sidebar-desktop {
-  overflow-x: hidden;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+#sidebar-desktop.collapsed {
+  overflow: visible !important;
 }
 
 /* Limitar el ancho solo a los enlaces del menú, no al botón */
@@ -93,9 +19,9 @@ body {
 
 /* Sidebar colapsado: ancho 60px para que coincida con el ajuste del footer y main-content */
 #sidebar-desktop.collapsed {
-  width: 60px !important;
-  min-width: 60px !important;
-  max-width: 60px !important;
+  width: 70px !important;
+  min-width: 70px !important;
+  max-width: 70px !important;
   padding-left: 0.25rem !important;
   padding-right: 0.25rem !important;
 }
@@ -108,11 +34,86 @@ body {
   white-space: nowrap;
 }
 
+#sidebar-desktop .nav-item.dropdown {
+  position: relative;
+}
+
+#sidebar-desktop .dropdown-menu {
+  position: absolute !important;
+  left: 100%;
+  top: 0;
+  z-index: 2000;
+  min-width: 160px;
+  margin-left: 0.5rem;
+}
+
+/* Cuando el sidebar está colapsado, muestra el menú justo al lado */
+#sidebar-desktop.collapsed .nav-item.dropdown .dropdown-menu {
+  left: 70px;
+  top: 0;
+  margin-left: 0;
+}
+
 #toggleSidebar {
   width: 40px;
   min-width: 40px;
   max-width: 40px;
   padding: 0;
+}
+
+.sidebar-bg {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-bg .nav-link {
+  color: inherit;
+}
+
+[data-bs-theme="dark"] .sidebar-bg {
+  background-color: #23272b;
+  color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] #toggleSidebar {
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-color: #495057;
+}
+
+[data-bs-theme="light"] #toggleSidebar {
+  background-color: #fff;
+  color: #212529;
+  border-color: #ced4da;
+}
+
+.dropdown-menu input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-bg {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-bs-theme="dark"] .navbar-bg {
+  background-color: #23272b;
+  color: #f8f9fa;
+}
+
+.footer-bg {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-bs-theme="dark"] .footer-bg {
+  background-color: #23272b;
+  color: #f8f9fa;
 }
 
 /* Sidebar fijo escritorio */
@@ -123,7 +124,6 @@ body {
     left: 0;
     width: 220px;
     height: calc(100vh - 56px);
-    color: white;
     padding: 1rem;
     overflow-y: auto;
     transition: width 0.3s;
@@ -145,5 +145,24 @@ body {
 
   #sidebar-desktop.collapsed ~ #main-content {
     margin-left: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  #sidebar-desktop {
+    width: 220px;
+  }
+  #main-content,
+  footer {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    max-width: calc(100% - 220px);
+    transition: margin-left 0.3s, width 0.3s;
+  }
+  #sidebar-desktop.collapsed ~ #main-content,
+  #sidebar-desktop.collapsed ~ footer {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+    max-width: calc(100% - 60px);
   }
 }
