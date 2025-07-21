@@ -40,27 +40,57 @@ if (sidebar.classList.contains("collapsed")) {
 }
 
 // Lógica para selector de tema (claro, oscuro, sistema)
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   const themeRadios = document.querySelectorAll('input[name="appearance"]');
+  const themeBtnIconDevice = document.querySelector("#theme-device i");
+  const themeBtnIconMovil = document.querySelector("#theme-movil i");
+
   function setTheme(theme) {
-    document.documentElement.setAttribute('data-bs-theme', theme === 'device' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme);
-    localStorage.setItem('theme', theme);
+    let iconClass = "bi-moon-stars";
+    if (theme === "light") iconClass = "bi-sun";
+    else if (theme === "dark") iconClass = "bi-moon";
+    else if (theme === "device") iconClass = "bi-circle-half";
+
+    document.documentElement.setAttribute(
+      "data-bs-theme",
+      theme === "device"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+        : theme
+    );
+    localStorage.setItem("theme", theme);
+
+    // Cambia el icono del botón del sistema de escritorio
+    if (themeBtnIconDevice) {
+      themeBtnIconDevice.className = `bi ${iconClass}`;
+    }
+
+    // Cambia el icono del botón del sistema de movil
+    if (themeBtnIconMovil) {
+      themeBtnIconMovil.className = `bi ${iconClass}`;
+    }
   }
+
   // Leer preferencia guardada
-  let savedTheme = localStorage.getItem('theme') || 'device';
+  let savedTheme = localStorage.getItem("theme") || "device";
   setTheme(savedTheme);
-  themeRadios.forEach(radio => {
+
+  themeRadios.forEach((radio) => {
     radio.checked = radio.value === savedTheme;
-    radio.addEventListener('change', function () {
+    radio.addEventListener("change", function () {
       setTheme(this.value);
     });
   });
+
   // Escuchar cambios del sistema si está en modo "device"
   if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-      if ((localStorage.getItem('theme') || 'device') === 'device') {
-        setTheme('device');
-      }
-    });
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        if ((localStorage.getItem("theme") || "device") === "device") {
+          setTheme("device");
+        }
+      });
   }
 });
