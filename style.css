@@ -116,6 +116,20 @@ body {
   color: #f8f9fa;
 }
 
+#sidebarMobile.offcanvas-start {
+  width: 300px !important; /* Ajusta el valor según lo que necesites */
+  max-width: 80vw; /* Opcional: para que no sea demasiado ancho en pantallas pequeñas */
+}
+
+/* Opciones del menú en sidebar móvil */
+#sidebarMobile .nav-link {
+  color: #212529; /* color para tema claro */
+}
+
+[data-bs-theme="dark"] #sidebarMobile .nav-link {
+  color: #f8f9fa; /* color para tema oscuro */
+}
+
 /* Sidebar fijo escritorio */
 @media (min-width: 992px) {
   #sidebar-desktop {

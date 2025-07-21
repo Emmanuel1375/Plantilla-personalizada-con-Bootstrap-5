@@ -19,8 +19,11 @@
     <nav
       class="navbar navbar-expand-lg shadow fixed-top shadow-sm px-3 navbar-bg">
       <div class="container-fluid">
-        <button class="btn btn-outline-dark d-lg-none me-2" type="button"
-          data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
+        <button
+          class="btn btn-outline d-lg-none me-2"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebarMobile">
           <i class="bi bi-list"></i>
         </button>
         <a class="navbar-brand fw-bold" href="#">MiApp</a>
@@ -28,13 +31,18 @@
         <!-- Opciones solo visibles en escritorio -->
         <div class="d-none d-lg-flex align-items-center ms-auto">
           <form class="d-none d-md-flex me-3" role="search">
-            <input class="form-control form-control-sm" type="search"
+            <input
+              class="form-control form-control-sm"
+              type="search"
               placeholder="Buscar..." aria-label="Buscar" />
           </form>
           <!-- Mensajes -->
           <div class="dropdown me-2">
-            <button class="btn btn-outline-secondary dropdown-toggle"
-              type="button" id="dropdownMensajes" data-bs-toggle="dropdown"
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMensajes"
+              data-bs-toggle="dropdown"
               aria-expanded="false">
               <i class="bi bi-envelope"></i>
             </button>
@@ -51,44 +59,65 @@
           </div>
           <!-- Notificaciones -->
           <div class="dropdown me-2">
-            <button class="btn btn-outline-secondary dropdown-toggle"
-              type="button" id="dropdownNotificaciones"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              id="dropdownNotificaciones"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
               <i class="bi bi-bell"></i>
             </button>
             <ul class="dropdown-menu dropdown-menu-end"
               aria-labelledby="dropdownNotificaciones">
-              <li><h6 class="dropdown-header">Notificaciones</h6></li>
-              <li><a class="dropdown-item" href="#">Tienes una nueva
-                  alerta</a></li>
-              <li><a class="dropdown-item" href="#">Actualización
-                  disponible</a></li>
+              <li>
+                <h6 class="dropdown-header">Notificaciones</h6>
+              </li>
+              <li><a class="dropdown-item" href="#">Tienes una nuevaalerta</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Actualización disponible</a>
+              </li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-center" href="#">Ver todas las
-                  notificaciones</a></li>
+              <li>
+                <a class="dropdown-item text-center" href="#">Ver todas las
+                  notificaciones</a>
+              </li>
             </ul>
           </div>
           <!-- Perfil -->
           <div class="dropdown">
-            <button class="btn btn-outline-secondary dropdown-toggle"
-              type="button" id="dropdownPerfil" data-bs-toggle="dropdown"
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              id="dropdownPerfil"
+              data-bs-toggle="dropdown"
               aria-expanded="false">
               <i class="bi bi-person-circle"></i>
             </button>
             <ul class="dropdown-menu dropdown-menu-end"
               aria-labelledby="dropdownPerfil">
-              <li><h6 class="dropdown-header">Mi Perfil</h6></li>
-              <li><a class="dropdown-item" href="#">Ver perfil</a></li>
-              <li><a class="dropdown-item" href="#">Configuración</a></li>
+              <li>
+                <h6 class="dropdown-header">Mi Perfil</h6>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Ver perfil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Configuración</a>
+              </li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-danger" href="#">Cerrar
-                  sesión</a></li>
+              <li>
+                <a class="dropdown-item text-danger" href="#">Cerrar sesión</a>
+              </li>
             </ul>
           </div>
           <!-- Selector de tema -->
           <div class="dropdown ms-2">
-            <button class="btn btn-outline-secondary dropdown-toggle"
-              type="button" id="dropdownTema" data-bs-toggle="dropdown"
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              id="dropdownTema"
+              data-bs-toggle="dropdown"
               aria-expanded="false">
               <i class="bi bi-moon-stars"></i>
             </button>
@@ -97,22 +126,34 @@
               <li><h6 class="dropdown-header">Tema</h6></li>
               <li>
                 <label class="dropdown-item" for="light">
-                  <input type="radio" name="appearance" id="light" value="light"
+                  <input 
+                    type="radio"
+                    name="appearance"
+                    id="light"
+                    value="light"
                     checked>
                   <i class="bi bi-sun me-2"></i>Claro
                 </label>
               </li>
               <li>
                 <label class="dropdown-item" for="dark">
-                  <input type="radio" name="appearance" id="dark" value="dark"
+                  <input
+                    type="radio"
+                    name="appearance"
+                    id="dark"
+                    value="dark"
                     checked>
                   <i class="bi bi-moon me-2"></i>Oscuro
                 </label>
               </li>
               <li>
                 <label class="dropdown-item" for="device">
-                  <input type="radio" name="appearance" id="device"
-                    value="device" checked>
+                  <input
+                    type="radio"
+                    name="appearance"
+                    id="device"
+                    value="device"
+                    checked>
                   <i class="bi bi-circle-half me-2"></i>Sistema
                 </label>
               </li>
@@ -159,11 +200,11 @@
               </li>
               <!-- Opción desplegable especial -->
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" 
+                <a class="nav-link dropdown-toggle" href="#"
                   id="sidebarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >
-                  <i class="bi bi-folder" data-bs-toggle="tooltip" title="Más opciones"></i>
+                  aria-expanded="false">
+                  <i class="bi bi-folder" data-bs-toggle="tooltip"
+                    title="Más opciones"></i>
                   <span class="text-label ms-2">Más opciones</span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="sidebarDropdown">
@@ -193,20 +234,129 @@
       </div>
       <div class="offcanvas-body">
         <!-- Opciones del header dentro del sidebar (solo móviles) -->
-        <div class="mb-3 d-block d-lg-none">
-          <form class="mb-2">
-            <input class="form-control form-control-sm" type="search"
-              placeholder="Buscar..." aria-label="Buscar" />
-          </form>
-          <div class="d-flex gap-2">
-            <button class="btn btn-outline btn-sm">
-              <i class="bi bi-bell"></i>
-            </button>
-            <button class="btn btn-outline btn-sm">
-              <i class="bi bi-person-circle"></i>
-            </button>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="mb-3  d-block d-lg-none">
+                <div class="d-flex gap-2">
+                  <!-- Mensajes -->
+                  <div class="dropdown me-2">
+                    <button class="btn btn-outline-secondary dropdown-toggle"
+                      type="button" id="dropdownMensajes"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class="bi bi-envelope"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="dropdownMensajes">
+                      <li><h6 class="dropdown-header">Mensajes</h6></li>
+                      <li><a class="dropdown-item" href="#">Mensaje 1:
+                          ¡Hola!</a></li>
+                      <li><a class="dropdown-item" href="#">Mensaje 2: ¿Cómo
+                          estás?</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item text-center" href="#">Ver
+                          todos los
+                          mensajes</a></li>
+                    </ul>
+                  </div>
+                  <!-- Notificaciones -->
+                  <div class="dropdown me-2">
+                    <button class="btn btn-outline-secondary dropdown-toggle"
+                      type="button" id="dropdownNotificaciones"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-bell"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="dropdownNotificaciones">
+                      <li><h6 class="dropdown-header">Notificaciones</h6></li>
+                      <li><a class="dropdown-item" href="#">Tienes una nueva
+                          alerta</a></li>
+                      <li><a class="dropdown-item" href="#">Actualización
+                          disponible</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item text-center" href="#">Ver
+                          todas las
+                          notificaciones</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <hr class="bg-secondary mt-3 mb-2" />
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="mb-3 d-block d-lg-none">
+                <div class="d-flex gap">
+                  <!-- Perfil -->
+                  <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle"
+                      type="button" id="dropdownPerfil"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class="bi bi-person-circle"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="dropdownPerfil">
+                      <li><h6 class="dropdown-header">Mi Perfil</h6></li>
+                      <li><a class="dropdown-item" href="#">Ver perfil</a></li>
+                      <li><a class="dropdown-item"
+                          href="#">Configuración</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item text-danger" href="#">Cerrar
+                          sesión</a></li>
+                    </ul>
+                  </div>
+                  <!-- Selector de tema -->
+                  <div class="dropdown ms-2">
+                    <button class="btn btn-outline-secondary dropdown-toggle"
+                      type="button" id="dropdownTema" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="dropdownTema">
+                      <li><h6 class="dropdown-header">Tema</h6></li>
+                      <li>
+                        <label class="dropdown-item" for="light">
+                          <input type="radio" name="appearance" id="light"
+                            value="light"
+                            checked>
+                          <i class="bi bi-sun me-2"></i>Claro
+                        </label>
+                      </li>
+                      <li>
+                        <label class="dropdown-item" for="dark">
+                          <input type="radio" name="appearance" id="dark"
+                            value="dark"
+                            checked>
+                          <i class="bi bi-moon me-2"></i>Oscuro
+                        </label>
+                      </li>
+                      <li>
+                        <label class="dropdown-item" for="device">
+                          <input type="radio" name="appearance" id="device"
+                            value="device" checked>
+                          <i class="bi bi-circle-half me-2"></i>Sistema
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="mb-3 d-block d-lg-none">
+                <form class="mb-2">
+                  <input class="form-control form-control-sm" type="search"
+                    placeholder="Buscar..." aria-label="Buscar" />
+                </form>
+                <hr class="bg-secondary mt-3 mb-2" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Opciones del menú -->
@@ -217,6 +367,20 @@
                 class="bi bi-person"></i> Perfil</a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i
                 class="bi bi-gear"></i> Configuración</a></li>
+          <!-- Opción desplegable especial -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"
+              id="sidebarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-folder"></i>
+              <span class="text-label ms-2">Más opciones</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="sidebarDropdown">
+              <li><a class="dropdown-item" href="#">Subopción 1</a></li>
+              <li><a class="dropdown-item" href="#">Subopción 2</a></li>
+              <li><a class="dropdown-item" href="#">Subopción 3</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link" href="#"><i
                 class="bi bi-box-arrow-right"></i> Salir</a></li>
         </ul>
@@ -236,8 +400,10 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum
               aspernatur, nostrum quasi vero hic, fuga esse quidem deleniti
               incidunt
-              minus quae harum perspiciatis iusto! Odio commodi error molestias
-              tempora nostrum sunt assumenda alias minus, ullam voluptatum magni
+              minus quae harum perspiciatis iusto! Odio commodi error
+              molestias
+              tempora nostrum sunt assumenda alias minus, ullam voluptatum
+              magni
               quae aliquid deleniti illum laboriosam reiciendis dolorum libero
               harum
               dolor repudiandae distinctio. Cupiditate ab minus ullam unde.
@@ -251,29 +417,38 @@
               voluptate
               quod inventore, omnis rerum modi! Culpa impedit, ea velit animi
               vero
-              consectetur reprehenderit aliquam. In eum autem quidem dignissimos
-              similique cupiditate voluptatum placeat temporibus, neque pariatur
+              consectetur reprehenderit aliquam. In eum autem quidem
+              dignissimos
+              similique cupiditate voluptatum placeat temporibus, neque
+              pariatur
               reprehenderit ipsa repellendus nemo ut est officia harum porro,
-              incidunt asperiores at, magni nihil necessitatibus quis voluptate!
+              incidunt asperiores at, magni nihil necessitatibus quis
+              voluptate!
               Dicta minus beatae eaque quae possimus cumque laborum, provident
               voluptatum vitae fuga praesentium natus laudantium! Iste itaque
               soluta, ipsum, aut nihil voluptate repellendus a nulla error,
               saepe
-              cupiditate repellat quaerat architecto nisi porro laudantium nobis
+              cupiditate repellat quaerat architecto nisi porro laudantium
+              nobis
               cum
-              nam illo hic dicta doloremque quae. Temporibus exercitationem quia
+              nam illo hic dicta doloremque quae. Temporibus exercitationem
+              quia
               modi dicta ratione doloremque voluptatibus doloribus porro,
               suscipit
               illum accusamus, ea animi voluptate eaque eos consectetur
               reiciendis
-              velit nesciunt vitae harum culpa quod et autem quae. Tempore, sunt
-              dolore. Nesciunt saepe cum, ad velit sed, totam ab recusandae odit
+              velit nesciunt vitae harum culpa quod et autem quae. Tempore,
+              sunt
+              dolore. Nesciunt saepe cum, ad velit sed, totam ab recusandae
+              odit
               sunt accusamus quae minus perferendis beatae qui vitae, quidem
               dignissimos officiis facere natus aut praesentium quisquam
               blanditiis
-              assumenda repudiandae! Placeat voluptatibus voluptas suscipit amet
+              assumenda repudiandae! Placeat voluptatibus voluptas suscipit
+              amet
               exercitationem quasi nesciunt debitis cupiditate ex rerum illum
-              magnam, quos alias officia fugiat sunt saepe? Harum hic quo nulla,
+              magnam, quos alias officia fugiat sunt saepe? Harum hic quo
+              nulla,
               porro, deserunt nam explicabo maxime odio repudiandae non culpa,
               ab
               numquam aliquid libero placeat quisquam nemo dolorem impedit
@@ -291,7 +466,8 @@
               omnis
               corporis explicabo nemo voluptatem veniam voluptas? Expedita
               tenetur
-              ducimus deserunt ab dolore ipsam nulla architecto accusantium vel,
+              ducimus deserunt ab dolore ipsam nulla architecto accusantium
+              vel,
               aliquam rem veritatis tempore! Voluptas quae, quas magni
               accusantium,
               deleniti, dicta enim numquam repudiandae libero a nam facilis
@@ -300,7 +476,8 @@
               quam
               suscipit minus facilis minima, corrupti, reiciendis totam? Ab
               explicabo eum, autem ex ea veritatis animi enim impedit quia
-              excepturi. Nobis nesciunt assumenda ratione odit minus iusto eos,
+              excepturi. Nobis nesciunt assumenda ratione odit minus iusto
+              eos,
               unde
               magni similique harum maxime suscipit voluptates laudantium
               repellat
@@ -308,7 +485,8 @@
               Eligendi
               veritatis deserunt nihil eius aperiam harum laudantium fuga
               tenetur in
-              modi maiores culpa itaque esse aut atque vitae est beatae deleniti
+              modi maiores culpa itaque esse aut atque vitae est beatae
+              deleniti
               a
               voluptatum, quae quas incidunt. Qui, voluptates ullam unde
               laboriosam
@@ -322,7 +500,8 @@
               Quae inventore doloribus accusamus excepturi saepe quisquam nam
               reiciendis rerum sit, dicta odio ex ullam fuga rem explicabo,
               culpa
-              odit. Aliquam odit possimus soluta dicta numquam cum pariatur at,
+              odit. Aliquam odit possimus soluta dicta numquam cum pariatur
+              at,
               consequatur repellendus ducimus, sed totam quae sapiente
               blanditiis
               atque, laborum mollitia recusandae eligendi optio. Praesentium
@@ -333,7 +512,8 @@
               fuga
               cum consequatur aut, fugiat voluptate accusantium amet tempora
               vero,
-              porro molestiae, placeat cupiditate deleniti error eaque a minima
+              porro molestiae, placeat cupiditate deleniti error eaque a
+              minima
               unde
               repellat reprehenderit iste mollitia distinctio obcaecati? Illo,
               rerum
@@ -349,9 +529,11 @@
               nemo
               dolore accusamus perspiciatis provident, saepe itaque beatae
               molestias
-              atque corrupti. Accusantium, nostrum. Dignissimos nulla cum totam
+              atque corrupti. Accusantium, nostrum. Dignissimos nulla cum
+              totam
               odio. Rem obcaecati quidem nostrum eaque minus aut accusamus sed
-              voluptatum velit odio mollitia deserunt quis delectus soluta enim
+              voluptatum velit odio mollitia deserunt quis delectus soluta
+              enim
               tempore, facilis nemo quia possimus tenetur assumenda nisi
               eligendi
               laboriosam? Velit nulla eum ratione quidem fuga officiis tempora
@@ -359,7 +541,8 @@
               reprehenderit
               ratione ea facilis distinctio officiis provident omnis saepe
               dolorem
-              accusamus, sit unde corporis eum quod. Debitis consequatur aliquid
+              accusamus, sit unde corporis eum quod. Debitis consequatur
+              aliquid
               saepe, labore quasi est non aspernatur excepturi dignissimos
               asperiores quibusdam nisi quae maxime ex sequi esse quam,
               molestias,
@@ -383,7 +566,8 @@
           <div class="col-md-6 d-flex justify-content-end">
             <a href="#" class="text-muted me-3 text-decoration-none">Acerca
               de</a>
-            <a href="#" class="text-muted text-decoration-none">Contáctenos</a>
+            <a href="#"
+              class="text-muted text-decoration-none">Contáctenos</a>
           </div>
         </div>
         <hr class="my-2">
